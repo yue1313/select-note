@@ -1,0 +1,191 @@
+/* セレクトノート — 共通スタイル
+   方針: 軽量・スマホ対応・読みやすさ優先。外部フォントやJSは使わない。 */
+
+:root {
+  --bg: #faf8f4;
+  --surface: #ffffff;
+  --text: #2b2b26;
+  --muted: #6f6a5e;
+  --accent: #5a7247;        /* 深い緑（森・菌糸のイメージ） */
+  --accent-dark: #42592f;
+  --border: #e3ded2;
+  --note-bg: #f3efe4;
+  --warn-bg: #fdf3e3;
+  --max-width: 760px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+    "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+a { color: var(--accent-dark); }
+a:hover { text-decoration: none; }
+
+img { max-width: 100%; height: auto; }
+
+/* ---------- ヘッダー ---------- */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.site-header .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 18px 16px 12px;
+}
+.site-title {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.site-title a { color: var(--text); text-decoration: none; }
+.site-tagline {
+  margin: 2px 0 10px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  font-size: 0.92rem;
+}
+.site-nav a { text-decoration: none; color: var(--accent-dark); }
+.site-nav a:hover { text-decoration: underline; }
+
+/* ---------- レイアウト ---------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* ---------- 記事一覧 ---------- */
+.post-list { list-style: none; margin: 0; padding: 0; }
+.post-list li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.post-list .post-title { margin: 0 0 4px; font-size: 1.12rem; }
+.post-list .post-title a { text-decoration: none; color: var(--text); }
+.post-list .post-title a:hover { color: var(--accent-dark); text-decoration: underline; }
+.post-meta { color: var(--muted); font-size: 0.82rem; margin: 0 0 6px; }
+.post-excerpt { margin: 0; font-size: 0.95rem; }
+.category-tag {
+  display: inline-block;
+  background: var(--note-bg);
+  color: var(--accent-dark);
+  border-radius: 999px;
+  padding: 0 10px;
+  font-size: 0.76rem;
+  margin-right: 6px;
+}
+
+/* ---------- 記事本文 ---------- */
+article h1 {
+  font-size: 1.55rem;
+  line-height: 1.45;
+  margin: 0 0 8px;
+}
+article h2 {
+  font-size: 1.22rem;
+  margin: 2em 0 0.6em;
+  padding-left: 10px;
+  border-left: 4px solid var(--accent);
+}
+article h3 { font-size: 1.05rem; margin: 1.6em 0 0.5em; }
+article p { margin: 0.8em 0; }
+article ul, article ol { padding-left: 1.4em; }
+article li { margin: 0.3em 0; }
+article table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  font-size: 0.94rem;
+  background: var(--surface);
+}
+article th, article td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+article th { background: var(--note-bg); }
+
+/* PR表記（記事冒頭の広告明示） */
+.pr-notice {
+  background: var(--warn-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  margin: 14px 0 20px;
+}
+
+/* 補足・メモボックス */
+.note {
+  background: var(--note-bg);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 1.2em 0;
+  font-size: 0.94rem;
+}
+.note p:first-child { margin-top: 0; }
+.note p:last-child { margin-bottom: 0; }
+
+/* ショップへの導線ボックス */
+.shop-box {
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin: 1.6em 0;
+}
+.shop-box .shop-box-title { font-weight: 700; margin: 0 0 6px; }
+.shop-box p { margin: 0.4em 0; }
+
+/* アフィリエイトリンク設置予定箇所（公開前に実リンクへ差し替え） */
+.affiliate-slot {
+  border: 1px dashed var(--muted);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 1.2em 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: var(--surface);
+}
+
+/* ---------- フッター ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.site-footer .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px 16px 32px;
+}
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 8px; }
+.site-footer a { color: var(--muted); }
+
+@media (max-width: 560px) {
+  body { font-size: 15px; }
+  article h1 { font-size: 1.35rem; }
+  .container { padding: 18px 14px 40px; }
+}
