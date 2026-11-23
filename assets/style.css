@@ -181,6 +181,15 @@ article th { background: var(--note-bg); }
   background: #e0951a;
   text-decoration: none;
 }
+.rakuten-btn {
+  background: #bf0000;
+  color: #ffffff;
+  margin: 4px 0 4px 8px;
+}
+.rakuten-btn:hover {
+  background: #a00000;
+  text-decoration: none;
+}
 
 /* ---------- フッター ---------- */
 .site-footer {
